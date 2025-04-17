@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PlantPal </title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+       /* Dark Mode Overrides */
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Apply white text to everything inside dark-theme */
+.dark-theme,
+.dark-theme * {
+    color: #ffffff !important;
+    border-color: #444 !important;
+}
+
+/* Background color adjustments for key sections */
+.dark-theme header,
+.dark-theme section,
+.dark-theme footer,
+.dark-theme .box,
+.dark-theme .box-container .box,
+.dark-theme .btn,
+.dark-theme .content,
+.dark-theme .heading,
+.dark-theme .contact form {
+    background-color: #1e1e1e !important;
+}
+
+/* Optional: adjust placeholder/input text color */
+.dark-theme input,
+.dark-theme textarea {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+/* Link and icon color */
+.dark-theme a,
+.dark-theme i {
+    color: #ffffff !important;
+}
+
+    </style>
+</head>
+<body>
+    
+    <!-- header section starts -->
+
+<header class="header">
+
+    <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo"> <i class="fas fa-user"></i> PlantPal </a>
+
+    <nav class="navbar">
+       <a data-aos="zoom-in-left" data-aos-delay="300" href="index.html">home</a>
+       <a data-aos="zoom-in-left" data-aos-delay="450" href="#about">Goal</a>
+       <a data-aos="zoom-in-left" data-aos-delay="600" href="#services">service</a>
+       <a data-aos="zoom-in-left" data-aos-delay="750" href="#plan">Plan</a>
+       <a data-aos="zoom-in-left" data-aos-delay="900" href="#gallery">Clientele</a>
+       <a data-aos="zoom-in-left" data-aos-delay="1050" href="#review">review</a>
+       <a data-aos="zoom-in-left" data-aos-delay="1200" href="#contact">contact</a>
+    
+    </nav>
+    <a data-aos="zoom-in-left" data-aos-delay="150"  href="login.html" class="signin-btn">sign in</a>
+
+    
+    <div class="icons">
+        <div data-aos="zoom-in-left" data-aos-delay="1350" class="fas fa-moon" id="theme-btn"></div>
+        <div data-aos="zoom-in-left" data-aos-delay="1500" class="fas fa-bars" id="menu"></div>
+    </div>
+
+</header>
+
+<!-- home -->
+
+<section class="home" id="home">
+
+    <div class="content" data-aos="fade-down">
+        <h3>Find your <br> favourable plant</h3>
+        <a href="quiz.html" class="btn1"> Take quiz </a>
+    </div>
+ 
+ </section>
+
+<!-- end -->
+
+<!-- about -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>Our</span> Goal</h1>
+ 
+    <div class="row">
+        
+        <div class="content" data-aos="fade-up" data-aos-delay="150">
+            <h3>PlantPal, virtual plant care assistant at your service!</h3>
+            <p>PlantPal is an interactive platform designed to make plant care easy, fun, and community-driven. Just type in a plant’s name to instantly get detailed information about it—from sunlight needs to ideal watering routines.</p>
+            <p>Not sure which plant suits your lifestyle? Take our quick quiz and discover your perfect leafy companion! Connect with fellow plant lovers in our vibrant community, where you can share tips, experiences, and green stories.</p>
+            <p>Worried about yellowing leaves or droopy stems? Just describe the symptoms and PlantPal will suggest possible diseases and care solutions. And soon, we’ll even remind you when it’s time to water—so your plants stay happy and healthy, always.</p>
+            <a href="signin.html" class="btn">Use now</a>
+        </div>
+        <div class="image" data-aos="fade-down" data-aos-delay="300">
+            <img src="https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-anthurium-andreanum-princess-amalia-elegance-plant_520x520.jpg?v=1611122988" alt="">
+        </div>
+    </div>
+ </section>
+
+ <!-- end -->
+
+ <!-- service -->
+
+ <section class="services" id="services">
+
+    <h1 class="heading">our services</h1>
+ 
+    <div class="box-container">
+ 
+        <div class="box" data-aos="zoom-in" data-aos-delay="150">
+          <img src="https://cdn-icons-png.freepik.com/512/1660/1660438.png" alt="">
+          <h3>Get to know the best plant for you</h3>
+          <p>Answer a small quiz and find out the best plant for you</p>
+        </div>
+ 
+       <div class="box" data-aos="zoom-in" data-aos-delay="300">
+          <img src="https://img.freepik.com/premium-vector/community-garden-icon-vector-image-can-be-used-public-utilities_120816-124346.jpg" alt="">
+          <h3>Community</h3>
+          <p>Get connected with like-minded people with your resonating love of plants</p>
+       </div>
+ 
+       <div class="box" data-aos="zoom-in" data-aos-delay="450">
+          <img src="images/SICK.JPG" alt="">
+          <h3>Dr. PlantPal</h3>
+          <p>Don't know why your plant's leaves are yellow, or why it's drooping? Dr. PlantPal is here to help!</p>
+       </div>
+ 
+    </div>
+ 
+ </section>
+ 
+<!-- service end-->
+
+<!-- plan section starts  -->
+
+<section class="plan" id="plan">
+
+    <h1 class="heading">membership plan</h1>
+    
+    <div class="box-container">
+    
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <h3 class="title">free</h3>
+            <h3 class="price">0.00<span>₹</span></h3>
+            <h3 class="month">per month</h3>
+            <ul>
+                <li><i class="fas fa-check"></i>get to know the best plant for you</li>
+                <li><i class="fas fa-check"></i>get all details by just a plant name</li>
+                <li><i class="fas fa-check"></i>care calender</li>
+            </ul>
+            <a href="signin.html"><button class="btn">use now</button></a>
+        </div>
+    
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <h3 class="title">standard</h3>
+            <h3 class="price">199.00<span>₹</span></h3>
+            <h3 class="month">per month</h3>
+            <ul>
+                <li><i class="fas fa-check"></i>free plan</li>
+                <li><i class="fas fa-check"></i>be part of a community</li>
+                <li><i class="fas fa-check"></i>watering reminders</li>
+            </ul>
+            <a href="https://buy.stripe.com/test_9AQ4gTbjffAscwwbIP"><button class="btn">buy now</button></a>
+        </div>
+    
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
+            <h3 class="title">premium</h3>
+            <h3 class="price">299.00<span>₹</span></h3>
+            <h3 class="month">per month</h3>
+            <ul>
+                <li><i class="fas fa-check"></i>standard plan</li>
+                <li><i class="fas fa-check"></i>disease identification</li>
+                <li><i class="fas fa-check"></i>suggestions based on real-time weather</li>
+            </ul> 
+            <a href="https://buy.stripe.com/test_3cs8x9drncogcww14c"><button class="btn">buy now</button></a>
+        </div>
+    
+    </div>
+    
+    </section>
+    
+    <!-- plan section ends -->
+
+    <!-- gallery=--->
+
+    <section class="gallery" id="gallery">
+
+        <h1 class="heading"> <span> Happy </span> clients</h1>
+    
+        <div class="swiper gallery-slider" data-aos="fade-up">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://thumbs.dreamstime.com/b/people-nature-plants-care-concept-smiling-indian-man-spraying-houseplant-water-sprayer-home-man-spraying-houseplant-151518419.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="https://thumbs.dreamstime.com/b/people-nature-plants-care-concept-smiling-indian-man-spraying-houseplant-water-sprayer-home-man-spraying-houseplant-152972715.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="https://thumbs.dreamstime.com/b/young-man-working-laptop-giving-thumbs-up-bright-office-filled-plants-sits-wooden-desk-sunny-smiling-344789906.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="https://media.istockphoto.com/id/1403839079/photo/busy-young-mixed-race-man-using-technologies.jpg?s=612x612&w=0&k=20&c=GDiOPrEGJLIhj30qL30swrkgfFd1osw5SML7hzZ6EcA=" alt=""></div>
+                <div class="swiper-slide"><img src="https://media.istockphoto.com/id/812998552/photo/cute-girl-portrait-in-the-nature-holding-plant.jpg?s=612x612&w=0&k=20&c=DsouB-pjwItzpV4TAa796Zgs3Qi9LjzAvnW2kXCT0WQ=" alt=""></div>
+                <div class="swiper-slide"><img src="https://www.shutterstock.com/image-photo/cute-little-boy-holding-beautiful-600nw-2320773233.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="https://img.freepik.com/premium-photo/little-girl-wipes-foliage-house-plants-houseplant-care_87742-19019.jpg" alt=""></div>
+            </div>
+        </div>
+    
+    </section>
+
+    <!-- end -->
+
+    <!-- review section starts  -->
+
+<section class="review" id="review">
+
+    <h1 class="heading"> client's review </h1>
+
+    <div class="swiper review-slider" data-aos="zoom-in">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT25mAlepxbW90CO5f84ow7bKJaPP3_ckmV4A&s" alt="">
+                <h3> Aditi Sharma – Delhi</h3>
+                <p>"I used to forget to water my plants all the time, but this app changed everything! The reminders are spot on, and my money plant has never looked greener. Even helped me identify a fungal issue before it got worse. Lifesaver!"</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img src="images/pic-2.png" alt="">
+                <h3>Ananya Iyer – Chennai</h3>
+                <p>"I love how simple and effective the reminders are. Got a nudge to fertilize my jade plant last week and wow, it’s thriving now. The app even told me it was time to repot my snake plant. Highly recommend it to any plant parent!"</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img src="images/pic-3.png" alt="">
+                <h3>Aditya Sharma – Bengaluru</h3>
+                <p>"Never thought tech and gardening would go hand in hand until I found this app. The watering reminders are so well-timed, and I love the monthly fertilizing checklist. Even repotting doesn't feel like a chore anymore!"</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <img src="images/pic-4.png" alt="">
+                <h3>Kavya Reddy – Hyderabad</h3>
+                <p>"I used to rely on guesswork, but not anymore. This app takes all the stress out of plant care. Especially love the detailed tips after identifying a disease—saved my tulsi plant from root rot!"</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<!-- review section ends -->
+
+<!-- team -->
+
+<section class="team" id="team">
+
+    <h1 class="heading">our team</h1>
+ 
+    <div class="box-container" data-aos="fade-up">
+ 
+       <div class="box">
+          <img src="images\piaFormalPic.jpg" alt="">
+          <h3>Pia Chalikwar</h3>
+          <p>Engineering student</p>
+          <div class="share">
+             <a href="https://in.linkedin.com/in/pia-chalikwar?trk=public_post_main-feed-card-text" class="fab fa-linkedin"></a>
+             <a href="#" class="fab fa-instagram"></a>
+          </div>
+       </div>
+ 
+       <div class="box">
+          <img src="images\dhriti.png" alt="">
+          <h3>Dhriti Kothari</h3>
+          <p>Engineering student</p>
+          <div class="share">
+             <a href="https://www.linkedin.com/in/dhritikothari/" class="fab fa-linkedin"></a>
+             <a href="#" class="fab fa-instagram"></a>
+          </div>
+       </div>
+ 
+    </div>
+ 
+ </section>
+
+<!-- end -->
+
+ <!-- contact section starts  -->
+
+ <section class="contact" id="contact">
+    <h1 class="heading"> <span>contact</span> us </h1>
+
+    <form action="contactus.php" method="POST" data-aos="zoom">
+        <div class="inputBox">
+            <input type="text" name="name" placeholder="name" data-aos="fade-up" required>
+            <input type="email" name="email" placeholder="email" data-aos="fade-up" required>
+        </div>
+
+        <div class="inputBox">
+            <input type="number" name="number" placeholder="number" data-aos="fade-up" required>
+            <input type="date" name="date" data-aos="fade-up" required>
+        </div>
+
+        <div class="inputBox">
+            <input type="text" name="address" placeholder="your address" data-aos="fade-up" required>
+            <select name="plan" data-aos="fade-up" required>
+                <option value="basic">basic plan</option>
+                <option value="premium">standard plan</option>
+                <option value="premium">premium plan</option>
+            </select>
+        </div>
+
+        <textarea name="message" placeholder="your message" cols="30" rows="10" data-aos="fade-up"></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
+    
+
+<!-- contact section ends -->
+
+<!-- footer -->
+
+<section class="footer">
+
+    <div class="box-container">
+  
+      <div class="box" data-aos="fade-up">
+        <h3> <i class="fas fa-user"></i> PlantPal </h3>
+        <p>PlantPal is a web-based platform designed to help plant enthusiasts and gardeners manage their plants effectively. It provides personalized care schedules, reminders for watering, fertilizing, repotting, and other plant care activities.</p>
+      </div>
+  
+      <div class="box" data-aos="fade-up">
+        <h3>Our Services</h3>
+          <a href="#"><i class="fas fa-chevron-right"></i> Watering reminders</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> Fertilizing reminders</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> Repotting reminders</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> Disease identification</a>
+      </div>
+  
+      <div class="box" data-aos="fade-up">
+        <h3>Contact Us</h3>
+        <a href="#"><i class="fas fa-phone"></i> +91 87794 74881</a>
+        <a href="#"><i class="fas fa-phone"></i> +91 96191 88892</a>
+        <a href="#"><i class="fas fa-envelope"></i> info@plantpal.com</a>
+        <a href="#"><i class="fas fa-map"></i> 123 Main St, Mumbai India</a>
+      </div>
+  
+      <div class="box" data-aos="fade-up">
+        <h3>Follow Us</h3>
+        <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+        <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+      </div>
+    </div>
+  
+  </section>
+  
+  
+  
+
+<!-- end -->
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init();
+    function myFunction() {
+        alert("Message successfully sent!");
+      }</script>
+      <script>
+        const themeBtn = document.getElementById('theme-btn');
+        const body = document.body;
+    
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                body.classList.add('dark-theme');
+                themeBtn.classList.remove('fa-moon');
+                themeBtn.classList.add('fa-sun');
+            } else {
+                body.classList.remove('dark-theme');
+                themeBtn.classList.remove('fa-sun');
+                themeBtn.classList.add('fa-moon');
+            }
+        }
+    
+        let currentTheme = localStorage.getItem('theme') || 'light';
+        applyTheme(currentTheme);
+    
+        themeBtn.addEventListener('click', () => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            localStorage.setItem('theme', currentTheme);
+            applyTheme(currentTheme);
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".gallery-slider", {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          loop: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          },
+        });
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</body>
+</html>
+
+

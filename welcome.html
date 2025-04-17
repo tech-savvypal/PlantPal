@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlantPal</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .content {
+      padding: 2rem;
+      text-align: center;
+    }
+    .plant-form input {
+      padding: 10px;
+      font-size: 16px;
+      width: 250px;
+    }
+    .plant-form button {
+      padding: 10px 16px;
+      margin-left: 10px;
+      background-color: #3a9459;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo"> <i class="fas fa-user"></i> PlantPal </a>
+  <nav class="navbar">
+    <a data-aos="zoom-in-left" data-aos-delay="300" href="welcome.html">home</a>
+    <a data-aos="zoom-in-left" data-aos-delay="750" href="plan.html">Plan</a>
+    <a data-aos="zoom-in-left" data-aos-delay="1200" href="contact.html">contact</a>
+    <a data-aos="zoom-in-left" data-aos-delay="1500" href="calendar.html">calendar</a>
+    <a data-aos="zoom-in-left" data-aos-delay="1800" href="community.php">community</a>
+  </nav>
+  <a data-aos="zoom-in-left" data-aos-delay="150" href="index.html" class="signin-btn">sign out</a>
+  <div class="icons">
+    <div data-aos="zoom-in-left" data-aos-delay="1350" class="fas fa-moon" id="theme-btn"></div>
+    <div data-aos="zoom-in-left" data-aos-delay="1500" class="fas fa-bars" id="menu"></div>
+  </div>
+</header>
+
+<!-- Content -->
+<br><br><br><br><br><br><br><br><br><br>
+<div class="content">
+  <h1 id="welcomeMessage">Welcome!</h1>
+  <div class="plant-form">
+    <form onsubmit="return addPlant(event)">
+      <input type="text" id="plantName" name="plantName" placeholder="Enter plant name..." required>
+      <button type="submit">Add Plant</button>
+    </form>
+  </div>
+</div>
+
+<!-- Plant cards container -->
+<div id="plantCards" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 2rem;"></div>
+<br>
+<br>
+<br>
+<br>
+<!-- footer -->
+
+<section class="footer">
+
+  <div class="box-container">
+
+    <div class="box" data-aos="fade-up">
+      <h3> <i class="fas fa-user"></i> PlantPal </h3>
+      <p>PlantPal is a web-based platform designed to help plant enthusiasts and gardeners manage their plants effectively. It provides personalized care schedules, reminders for watering, fertilizing, repotting, and other plant care activities.</p>
+    </div>
+
+    <div class="box" data-aos="fade-up">
+      <h3>Our Services</h3>
+        <a href="#"><i class="fas fa-chevron-right"></i> Watering reminders</a>
+        <a href="#"><i class="fas fa-chevron-right"></i> Fertilizing reminders</a>
+        <a href="#"><i class="fas fa-chevron-right"></i> Repotting reminders</a>
+        <a href="#"><i class="fas fa-chevron-right"></i> Disease identification</a>
+    </div>
+
+    <div class="box" data-aos="fade-up">
+      <h3>Contact Us</h3>
+      <a href="#"><i class="fas fa-phone"></i> +91 87794 74881</a>
+      <a href="#"><i class="fas fa-phone"></i> +91 96191 88892</a>
+      <a href="#"><i class="fas fa-envelope"></i> info@plantpal.com</a>
+      <a href="#"><i class="fas fa-map"></i> 123 Main St, Mumbai India</a>
+    </div>
+
+    <div class="box" data-aos="fade-up">
+      <h3>Follow Us</h3>
+      <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+      <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+      <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+      <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+
+<!-- end -->
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+
+<script>
+  AOS.init();
+function addPlant(event) {
+  event.preventDefault();
+
+  const plantName = document.getElementById('plantName').value.trim();
+  if (plantName === '') return;
+
+  const fileName = `${plantName.toLowerCase().replace(/\s+/g, '')}.php`;
+
+  fetch('create_plant_file.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ plantName })
+  })
+  .then(res => res.text())
+  .then(data => {
+    console.log(data);
+
+    if (data.includes("already exists")) {
+      alert("This plant already exists.");
+      return;
+    }
+
+    const link = document.createElement('a');
+    link.href = fileName;
+    link.target = '_blank';
+    link.style.textDecoration = 'none';
+
+    const card = document.createElement('div');
+    card.style.background = '#ffffff';
+    card.style.borderRadius = '20px';
+    card.style.padding = '30px 20px';
+    card.style.boxShadow = '0px 5px 15px rgba(0, 0, 0, 0.1)';
+    card.style.width = '250px';
+    card.style.textAlign = 'center';
+    card.style.fontFamily = 'Poppins, sans-serif';
+    card.style.display = 'flex';
+    card.style.flexDirection = 'column';
+    card.style.alignItems = 'center';
+    card.style.justifyContent = 'center';
+    card.style.transition = 'transform 0.2s ease-in-out';
+    card.style.cursor = 'pointer';
+    card.addEventListener('mouseover', () => card.style.transform = 'scale(1.05)');
+    card.addEventListener('mouseout', () => card.style.transform = 'scale(1)');
+
+    const icon = document.createElement('div');
+    icon.innerHTML = '🌱';
+    icon.style.fontSize = '40px';
+    icon.style.marginBottom = '15px';
+
+    const heading = document.createElement('h3');
+    heading.innerText = plantName;
+    heading.style.color = '#4caf50';
+    heading.style.fontWeight = '600';
+    heading.style.marginBottom = '10px';
+
+    const desc = document.createElement('p');
+    desc.innerText = 'Custom care alerts enabled!';
+    desc.style.color = '#555';
+    desc.style.fontSize = '14px';
+    desc.style.margin = '0';
+
+    card.appendChild(icon);
+    card.appendChild(heading);
+    card.appendChild(desc);
+    link.appendChild(card);
+
+    document.getElementById('plantCards').appendChild(link);
+    document.getElementById('plantName').value = '';
+  })
+  .catch(err => console.error(err));
+
+  return false;
+}
+
+// Handle logout
+document.querySelector('.signin-btn').addEventListener('click', () => {
+  sessionStorage.removeItem('user');
+});
+
+// On page load, personalize welcome
+document.addEventListener('DOMContentLoaded', () => {
+  const user = JSON.parse(sessionStorage.getItem('user'));
+  if (user) {
+    document.getElementById('welcomeMessage').textContent = `Welcome, ${user.name}!`;
+  } else {
+    window.location.href = 'login.html';
+  }
+});
+</script>
+<script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/01/17/22/20250117220723-MAZ4XDYQ.js"></script>
+</body>
+</html>

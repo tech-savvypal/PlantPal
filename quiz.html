@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlantPal</title>
+
+  <!-- AOS and Swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a data-aos="zoom-in-left" data-aos-delay="150" href="#" class="logo">
+      <i class="fas fa-user"></i> PlantPal
+    </a>
+    <nav class="navbar">
+      <a data-aos="zoom-in-left" data-aos-delay="300" href="index.html">home</a>
+      <a data-aos="zoom-in-left" data-aos-delay="750" href="plan.html">Plan</a>
+      <a data-aos="zoom-in-left" data-aos-delay="1200" href="#contact">contact</a>
+    </nav>
+    <a data-aos="zoom-in-left" data-aos-delay="150" href="login.html" class="signin-btn">sign in</a>
+    <div class="icons">
+      <div data-aos="zoom-in-left" data-aos-delay="1350" class="fas fa-moon" id="theme-btn"></div>
+      <div data-aos="zoom-in-left" data-aos-delay="1500" class="fas fa-bars" id="menu"></div>
+    </div>
+  </header>
+
+  <!-- Spacer -->
+  <br><br><br><br><br><br><br><br><br><br><br>
+
+  <!-- Quiz Container -->
+  <div class="container" id="quiz-container">
+    <div class="progress" id="progress-text">Question 1 of 3 - 33% complete</div>
+    <h1>Find Your Perfect Plant</h1>
+    <div id="question-container"></div>
+    <button class="button" id="next-button" disabled>Next Question</button>
+  </div>
+
+  <br><br><br><br><br>
+
+  <!-- footer -->
+  <section class="footer">
+    <div class="box-container">
+
+      <div class="box" data-aos="fade-up">
+        <h3> <i class="fas fa-user"></i> PlantPal </h3>
+        <p>PlantPal is a web-based platform designed to help plant enthusiasts and gardeners manage their plants effectively. It provides personalized care schedules, reminders for watering, fertilizing, repotting, and other plant care activities.</p>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <h3>Our Services</h3>
+          <a href="#"><i class="fas fa-chevron-right"></i> Watering reminders</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> Fertilizing reminders</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> Repotting reminders</a>
+          <a href="#"><i class="fas fa-chevron-right"></i> Disease identification</a>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <h3>Contact Us</h3>
+        <a href="#"><i class="fas fa-phone"></i> +91 87794 74881</a>
+        <a href="#"><i class="fas fa-phone"></i> +91 96191 88892</a>
+        <a href="#"><i class="fas fa-envelope"></i> info@plantpal.com</a>
+        <a href="#"><i class="fas fa-map"></i> 123 Main St, Mumbai India</a>
+      </div>
+
+      <div class="box" data-aos="fade-up">
+        <h3>Follow Us</h3>
+        <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+        <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Quiz Script -->
+  <script>
+    AOS.init();
+    const quizQuestions = [
+      {
+        question: "How much natural light does your space receive?",
+        options: [
+          "Low light - away from windows or north-facing",
+          "Medium light - near windows with filtered light",
+          "Bright light - near south/west-facing windows"
+        ]
+      },
+      {
+        question: "How often do you want to water your plants?",
+        options: ["Rarely", "Occasionally", "Frequently"]
+      },
+      {
+        question: "Do you have pets in your home?",
+        options: ["Yes", "No"]
+      }
+    ];
+
+    const results = {
+      "Low light - away from windows or north-facing-Rarely-Yes": {
+        plant: "Snake Plant",
+        image: "images/snake.jpg",
+        description: "A tough plant..."
+      },
+      "Low light - away from windows or north-facing-Rarely-No": {
+        plant: "ZZ Plant",
+        image: "images/zz-plant.jpg",
+        description: "A good low-maintenance option."
+      },
+      "Medium light - near windows with filtered light-Frequently-No": {
+        plant: "Spider Plant",
+        image: "images/spider-plant.jpg",
+        description: "Loves bright indirect light."
+      },
+      "default": {
+        plant: "Monstera Deliciosa",
+        image: "images/monstera.jpg",
+        description: "A popular houseplant with stunning foliage..."
+      }
+    };
+
+    let currentQuestion = 0;
+    let answers = [];
+    const questionContainer = document.getElementById("question-container");
+    const nextButton = document.getElementById("next-button");
+    const progressText = document.getElementById("progress-text");
+
+    function showQuestion() {
+      const q = quizQuestions[currentQuestion];
+      progressText.innerText = `Question ${currentQuestion + 1} of ${quizQuestions.length} - ${Math.round(((currentQuestion + 1) / quizQuestions.length) * 100)}% complete`;
+      questionContainer.innerHTML = `
+        <div class='question'>${q.question}</div>
+        ${q.options.map(option => `
+          <div class='options'>
+            <label><input type='radio' name='answer' value='${option}'> ${option}</label>
+          </div>`).join('')}
+      `;
+      nextButton.disabled = true;
+    }
+
+    function showResult() {
+      const key = answers.join('-');
+      const result = results[key] || results["default"];
+      questionContainer.innerHTML = `
+        <div class='result-container'>
+          <h2>Your Perfect Plant Match</h2>
+          ${result.image ? `<img src='${result.image}' alt='${result.plant}' style="max-width: 100%; height: auto; margin-bottom: 20px;">` : ""}
+          <h2 style="margin-top: 20px;">${result.plant}</h2>
+          <p style="margin: 10px 0 20px;">${result.description}</p>
+          <div class='buttons' style="margin-top: 30px;">
+            <button class='button' onclick='restartQuiz()'>Take Quiz Again</button>
+          </div>
+        </div>`;
+      nextButton.style.display = "none";
+    }
+
+    function restartQuiz() {
+      currentQuestion = 0;
+      answers = [];
+      nextButton.style.display = "block";
+      showQuestion();
+    }
+
+    document.addEventListener("change", () => {
+      nextButton.disabled = false;
+    });
+
+    nextButton.addEventListener("click", () => {
+      const selected = document.querySelector("input[name='answer']:checked");
+      if (!selected) return alert("Please select an option");
+      answers.push(selected.value);
+      if (currentQuestion < quizQuestions.length - 1) {
+        currentQuestion++;
+        showQuestion();
+      } else {
+        showResult();
+      }
+    });
+
+    showQuestion();
+  </script>
+</body>
+</html>
